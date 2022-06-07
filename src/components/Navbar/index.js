@@ -23,6 +23,7 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import { useNavigate } from 'react-router-dom';
 
 
 const drawerWidth = 320;
@@ -30,6 +31,8 @@ const drawerWidth = 320;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const navigation = useNavigate()
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -42,27 +45,27 @@ function ResponsiveDrawer(props) {
           <Link sx={{cursor:'pointer'}}>
               <img style={{padding:'50px 0px 50px 0px'}} src={rasm}/>
           </Link>
-            <ListItem>
+            <ListItem onClick={() => navigation("/")}>
               <ListItemButton className='a'>
-               <span className='span'></span> Home
+              <span className='span'></span> Home
               </ListItemButton>
             </ListItem>
-            <ListItem>
+            <ListItem onClick={() => navigation("/shop")}>
               <ListItemButton className='a'>
               <span className='span'></span> Shop
               </ListItemButton>
             </ListItem>
-            <ListItem>
+            <ListItem onClick={() => navigation("/product")}>
               <ListItemButton className='a'>
               <span className='span'></span> Product
               </ListItemButton>
             </ListItem>
-            <ListItem>
+            <ListItem onClick={() => navigation("/cart")}>
               <ListItemButton className='a'>
               <span className='span'></span>  Cart
               </ListItemButton>
             </ListItem>
-            <ListItem>
+            <ListItem onClick={() => navigation("/checkout")}>
               <ListItemButton className='a'>
               <span className='span'></span>  Checkout
               </ListItemButton>
